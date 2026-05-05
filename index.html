@@ -105,7 +105,7 @@
             }
 
             try {
-                const response = await fetch('data.json');
+                const response = await fetch('data3.json');
                 if (!response.ok) {
                     throw new Error('فشل تحميل ملف البيانات');
                 }
@@ -120,9 +120,10 @@
 
                 output.innerHTML = `
                     <div class="result">
-                        <h2> ${student.name}</h2>
-                        <p>الكود: ${student.code || student.bn}</p>
-                        <p>الدرجة : <span style="font-weight: bold;font-size: 25px;">${student.quiz1}</span> / 10</p>
+                        <h2> ${student["Name"]}</h2>
+                        <p>الكود: ${student["Student Code"] || student.bn}</p>
+                        <p>كويز 1 : <span style="font-weight: bold;font-size: 25px;">${student["Quiz (1)"]}</span> / 10</p>
+                        <p>كويز 2: <span style="font-weight: bold;font-size: 25px;">${student["Quiz (2)"]}</span> / 10</p>
                     </div>
                 `;
                 if(student.quiz1 >= 8){
