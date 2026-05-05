@@ -111,7 +111,7 @@
                 }
 
                 const students = await response.json();
-                const student = students.find(item => item.code === studentId || item.bn === studentId);
+                const student = students.find(item => item['Student Code'] === studentId || item.bn === studentId);
 
                 if (!student) {
                     output.innerHTML = '<div class="message error"><p>الطالب غير موجود في ملف البيانات.</p></div>';
